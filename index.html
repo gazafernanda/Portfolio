@@ -288,7 +288,7 @@
 
 
     <div id="mobile-menu"
-        class="fixed inset-0 bg-black/95 z-[60] transform translate-y-full transition-transform duration-300 md:hidden flex items-center justify-center">
+        class="fixed inset-0 bg-black/95 z-[60] transform -translate-x-full transition-transform duration-300 md:hidden flex items-center justify-center">
         <button id="close-menu" class="absolute top-8 right-8 text-white p-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
@@ -321,7 +321,7 @@
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
         function toggleMenu() {
-            mobileMenu.classList.toggle('translate-y-full');
+            mobileMenu.classList.toggle('-translate-x-full');
             document.body.classList.toggle('overflow-hidden');
         }
 
