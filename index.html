@@ -285,7 +285,25 @@
     </footer>
 
     <!-- Scripts -->
+
+
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-black/95 z-[60] transform translate-y-full transition-transform duration-300 md:hidden flex items-center justify-center">
+        <button id="close-menu" class="absolute top-8 right-8 text-white p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <div class="flex flex-col items-center space-y-8 text-2xl font-outfit font-bold uppercase tracking-widest">
+            <a href="#about" class="hover:text-secondary transition-colors mobile-link">About</a>
+            <a href="#projects" class="hover:text-secondary transition-colors mobile-link">Work</a>
+            <a href="#contact" class="hover:text-secondary transition-colors mobile-link">Contact</a>
+        </div>
+    </div>
+
     <script>
+        // Reveal Animation Observer
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -295,6 +313,24 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Mobile Menu Logic
+        const mobileBtn = document.querySelector('button.md\\:hidden');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeBtn = document.getElementById('close-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-y-full');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        if (mobileBtn) mobileBtn.addEventListener('click', toggleMenu);
+        if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
     </script>
 </body>
 
