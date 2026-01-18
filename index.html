@@ -76,7 +76,7 @@
     <!-- Header -->
     <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/5 h-20">
         <div class="max-w-7xl mx-auto px-8 h-full flex items-center justify-center relative">
-            <div class="hidden md:flex items-center space-x-12 text-sm font-medium tracking-widest uppercase">
+            <div class="hidden md:flex items-center     space-x-12 text-sm font-medium tracking-widest uppercase">
                 <a href="#about" class="hover:text-secondary transition-colors">About</a>
                 <a href="#projects" class="hover:text-secondary transition-colors">Work</a>
                 <a href="#contact" class="hover:text-secondary transition-colors">Contact</a>
@@ -286,15 +286,16 @@
 
     <!-- Scripts -->
 
-
     <div id="mobile-menu"
-        class="fixed inset-0 bg-black/95 z-[60] transform -translate-x-full transition-transform duration-300 md:hidden flex items-center justify-center">
-        <button id="close-menu" class="absolute top-8 right-8 text-white p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-        </button>
+        class="fixed inset-0 bg-black/95 z-[60] transform translate-x-full transition-transform duration-300 md:hidden flex items-center justify-center">
+        <div class="absolute top-0 right-0 h-20 px-8 flex items-center">
+            <button id="close-menu" class="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
         <div class="flex flex-col items-center space-y-8 text-2xl font-outfit font-bold uppercase tracking-widest">
             <a href="#about" class="hover:text-secondary transition-colors mobile-link">About</a>
             <a href="#projects" class="hover:text-secondary transition-colors mobile-link">Work</a>
@@ -321,7 +322,7 @@
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
         function toggleMenu() {
-            mobileMenu.classList.toggle('-translate-x-full');
+            mobileMenu.classList.toggle('translate-x-full');
             document.body.classList.toggle('overflow-hidden');
         }
 
